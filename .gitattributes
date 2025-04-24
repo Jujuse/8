@@ -1,2 +1,66 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+def add_even_index():
+    # Введення списку
+    A = list(map(int, input('Введіть елементи списку через пробіл: ').split()))
+    print("Початковий список:", A)
+    
+    # Створення нового списку з елементами парних індексів
+    even_index = []
+    for i in range(len(A)):
+        if i % 2 == 0:  # Якщо індекс парний (0, 2, 4...)
+            even_index.append(A[i])
+    
+    # Додаємо ці елементи в кінець списку
+    A += even_index
+    print("Список після додавання:", A)
+    return A
+
+# Виклик функції
+add_even_index()
+// 2
+def find_duplicates():
+    # Введення списку
+    A = list(map(int, input('Введіть елементи списку через пробіл: ').split()))
+    print("Початковий список:", A)
+    
+    # Шукаємо елементи, що повторюються
+    duplicates = []
+    seen = []
+    for num in A:
+        if num in seen and num not in duplicates:
+            duplicates.append(num)
+        seen.append(num)
+    
+    print("Елементи, що повторюються:", duplicates)
+    return duplicates
+
+# Виклик функції
+find_duplicates()
+// 3 
+def work_with_sets():
+    # Створюємо множину всіх чисел від 8 до 22
+    x = set(range(8, 23))
+    print("Множина x:", x)
+    
+    # Функція для перевірки простого числа
+    def is_prime(n):
+        if n < 2:
+            return False
+        for i in range(2, int(n**0.5)+1):
+            if n % i == 0:
+                return False
+        return True
+    
+    # Створюємо множину простих чисел
+    y = set()
+    for num in x:
+        if is_prime(num):
+            y.add(num)
+    print("Множина простих чисел y:", y)
+    
+    # Знаходимо числа, які не є простими
+    not_primes = x - y
+    print("Числа, які не є простими:", not_primes)
+    return not_primes
+
+# Виклик функції
+work_with_sets()
